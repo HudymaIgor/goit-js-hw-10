@@ -15,7 +15,7 @@ const countryInf = document.querySelector('.country-info');
 
 const onInputEl = debounce(() => {
     const countryQuery = inputEl.value.trim();
-    
+
     if (countryQuery === "") {
         countryInf.innerHTML = '';
         countryLst.innerHTML = '';
@@ -24,7 +24,8 @@ const onInputEl = debounce(() => {
  fetchCountries(countryQuery)
      .then(data => {
                 if (data.length > 10) {
-                    Notiflix.Notify.info("Too many matches found. Please enter a more specific name.")
+                    Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
+
                 } else if (data.length >=2) { 
                     countryLst.innerHTML = countryList(data);
                     countryInf.innerHTML = '';
@@ -38,6 +39,8 @@ const onInputEl = debounce(() => {
         .catch(err => {
             if (err.message === '404') {
                 Notiflix.Notify.failure("Oops, there is no country with that name");
+            countryInf.innerHTML = '';
+            countryLst.innerHTML = '';
             } 
         });
     }, DEBOUNCE_DELAY);
