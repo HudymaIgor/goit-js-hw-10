@@ -11,10 +11,25 @@ body {
   color: #212121;
   line-height: 1.5;
 }
-
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+ul {
+  list-style: none;
+}
+.country-list{
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+.countryList{
+padding: 10px;
+border: 2px solid grey;
+}
+
+.country-info{
+  display: flex;
 }

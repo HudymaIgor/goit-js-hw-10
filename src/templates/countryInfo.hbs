@@ -1,6 +1,8 @@
 {{#this}}
-<div>
+    <div class="flags">
+    <img src="{{this.flags.svg}}" alt="{{this.name.official}} width = "200px" height = "100px">
     <h2 class="contry-name">{{this.name.official}}</h2>
+    </div>
     <ul>
         <li>
             <p class="capital">Capital: {{this.capital}}</p>
@@ -9,11 +11,7 @@
             <p class="population">Population: {{this.population}}</p>
         </li>
         <li>
-            <p class="flags">Flags: {{this.flags.svg}}</p>
-        </li>
-        <li>
             <p class="languages">Languages: {{this.languages}}</p>
         </li>
     </ul>
-</div>
 {{/this}}
